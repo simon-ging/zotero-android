@@ -1,12 +1,12 @@
 # readme
 
-ok it works BUTTT its only for the paid version, not the self run one...
+zotero android client for connecting to zotero servers.
 
-trying to get the build from the repos actions
+the build here was created from the repository github actions:
 
 https://github.com/zotero/zotero-android/actions
 
-## first get android sdk working properly
+## setup android sdk
 
 ```
 sudo apt-get install openjdk-17-jdk -y
@@ -25,7 +25,7 @@ sdkmanager "platform-tools"
 # sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3"
 ```
 
-## running gradle at the end will then download the deps
+## build
 
 ```
 # setup jdk
@@ -49,11 +49,7 @@ wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_la
 
 # deploy to google play internal test pack
 ./gradlew --no-configuration-cache -PpreDexLibs=false publishInternalReleaseBundle --stacktrace
-```
 
-### making it work:
-
-```
 # remove play dependencies from app/build...kts
 // id("com.github.triplet.play") version "3.7.0"
 # and the entire play block
